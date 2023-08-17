@@ -20,12 +20,7 @@ export const Accommodation: FC<Props> = ({ lang }): JSX.Element => {
 				</Text>
 			</div>
 			<div className={styles.slider_img}>
-				<Image
-					src="https://hacks.byster.one/static/media/4a.b14eb4a8c94bf4aa9963.png"
-					alt="img"
-					width="250"
-					height="600"
-				/>
+				<Image src="/rust-human.png" alt="img" width="250" height="600" />
 			</div>
 		</div>
 	);
