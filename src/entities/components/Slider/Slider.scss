@@ -1,0 +1,162 @@
+.mySwiper {
+	height: 250px !important;
+
+	@media (max-width: 400px) {
+		height: 150px !important;
+	}
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+// .swiper-slide img {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   // background-size: contain;
+//   object-fit: cover;
+//   border-radius: 10px;
+// }
+
+// .swiper-wrapper {
+//   display: flex;
+//   gap: 10px;
+// }
+
+.swiper-pagination-bullet {
+	width: 15px !important;
+	height: 15px !important;
+	border-radius: 50% !important;
+	background-color: #2e454d !important;
+	opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+	width: 100px !important;
+	border-radius: 10px !important;
+	background-color: #2e454d !important;
+}
+
+.slider-wrapper {
+	position: relative;
+}
+
+.img-slider {
+	display: block;
+	height: 100%;
+	width: 100%;
+
+	img,
+	iframe {
+		width: 100%;
+		height: 100%;
+		// object-fit: cover;
+		border-radius: 10px;
+		background: #000;
+
+		video {
+			border-radius: 10px;
+		}
+	}
+}
+
+.prev,
+.next {
+	position: absolute;
+	top: calc(50% - 20px);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	color: #fff;
+	cursor: pointer;
+
+	// @media (max-width: 1200px) {
+	//   height: 70px;
+	//   width: 70px;
+	// }
+
+	@media (max-width: 800px) {
+		display: none;
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+
+	.arrow_prev,
+	.arrow_next {
+		transition: all 0.2s ease-in-out;
+	}
+
+	.arrow_prev {
+		transform: rotate(180deg);
+	}
+
+	&:hover {
+		.arrow_prev {
+			transform: rotate(180deg) translateX(-5px);
+		}
+		.arrow_next {
+			transform: translateX(5px);
+		}
+	}
+}
+
+.prev {
+	left: -50px;
+
+	@media (max-width: 1200px) {
+		left: -35px;
+	}
+}
+
+.next {
+	right: -50px;
+
+	@media (max-width: 1200px) {
+		right: -35px;
+	}
+}
+
+.slide_next__button,
+.slide_prev__button {
+	width: 40px;
+	height: 40px;
+	align-self: center;
+	cursor: pointer;
+	background-color: transparent;
+	border-radius: 0;
+	border: none;
+	opacity: 0.75;
+
+	position: absolute;
+	top: 50%;
+
+	z-index: 5;
+}
+
+.slide_next__button:hover,
+.slide_prev__button:hover {
+	opacity: 1;
+}
+
+.slide_next__button {
+	right: -100px;
+}
+
+.slide_prev__button {
+	left: -100px;
+}
+
+.slide_next__button img,
+.slide_prev__button img {
+	width: 30px;
+	height: auto;
+}
