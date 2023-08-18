@@ -8,6 +8,7 @@ import { WhyUs } from "./components/WhyUs/WhyUs";
 import { Accommodation } from "./components/Accommodation/Accommodation";
 import { About } from "./components/About/About";
 import { Socials } from "./components/Socials/Socials";
+import { Up } from "./components/Up/Up";
 
 export {
 	Modal,
@@ -20,4 +21,5 @@ export {
 	Accommodation,
 	About,
 	Socials,
+	Up,
 };

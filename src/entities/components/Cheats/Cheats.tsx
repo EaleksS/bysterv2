@@ -17,9 +17,19 @@ export const Cheats: FC<Props> = (props): JSX.Element => {
 	return (
 		<div className={styles.cheats}>
 			<div className={styles.bg}>
-				<Image src={props.bg_img} alt="product" width={500} height={500} />
+				{props.bg_img && (
+					<Image
+						src={props.bg_img}
+						alt="product"
+						width={500}
+						height={300}
+						priority
+					/>
+				)}
 				<div className={styles.title}>
-					<Image src={props.logo_img} alt="logo" width={200} height={200} />
+					{props.logo_img && (
+						<Image src={props.logo_img} alt="logo" width={100} height={100} />
+					)}
 					<Text type="h3" up fw="600">
 						{props.name}
 					</Text>

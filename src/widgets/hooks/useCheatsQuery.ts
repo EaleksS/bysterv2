@@ -1,19 +1,19 @@
-import { useQuery } from "react-query";
 import { getCheats } from "../services/cheats.service";
 import { ICheats } from "../interface/cheats.interface";
+import { useQuery } from "@tanstack/react-query";
 
 export const useCheatsQuery = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: [`cheats`],
-    queryFn: () => getCheats.getCheatsList(),
-    keepPreviousData: true,
-  });
+	const { data, isLoading } = useQuery({
+		queryKey: [`cheats`],
+		queryFn: () => getCheats.getCheatsList(),
+		keepPreviousData: true,
+	});
 
-  let newData: ICheats[] = [];
+	let newData: ICheats[] = [];
 
-  if (!isLoading) {
-    Object.values(data).forEach((el: any) => newData.push(el));
-  }
+	if (!isLoading) {
+		Object.values(data).forEach((el: any) => newData.push(el));
+	}
 
-  return { isLoading, newData };
+	return { isLoading, newData };
 };
