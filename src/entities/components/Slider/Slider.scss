@@ -140,6 +140,10 @@
 	top: 50%;
 
 	z-index: 5;
+
+	@media (max-width: 1410px) {
+		display: none;
+	}
 }
 
 .slide_next__button:hover,

@@ -40,6 +40,12 @@ body::after {
 	opacity: 0.6;
 }
 
+@media (max-width: 700px) {
+	body::after {
+		display: none;
+	}
+}
+
 body::before {
 	content: "";
 	position: absolute;

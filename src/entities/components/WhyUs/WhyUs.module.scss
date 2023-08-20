@@ -51,6 +51,10 @@
 			&.active {
 				opacity: 1;
 				transform: scale(1);
+
+				@media (max-width: 700px) {
+					transform: scale(1) translateY(-70px);
+				}
 			}
 		}
 	}
@@ -65,6 +69,11 @@
 		img {
 			width: 100px;
 			cursor: pointer;
+
+			@media (max-width: 600px) {
+				width: 70px;
+				height: 70px;
+			}
 
 			@media (min-width: 600px) {
 				transition: all 0.2s ease-in-out;
