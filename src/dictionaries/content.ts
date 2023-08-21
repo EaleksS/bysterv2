@@ -28,7 +28,7 @@ interface DictionaryEntry {
 	mainSlideSocial: string;
 	detect: string;
 	unDetect: string;
-	go: string;
+	from: string;
 	update: string;
 }
 
@@ -72,7 +72,7 @@ export const dictionary: Record<string, DictionaryEntry> = {
 		mainSlideSocial: "Social media",
 		detect: "detected",
 		unDetect: "undetected",
-		go: "go",
+		from: "from",
 		update: "update",
 	},
 	ru: {
@@ -114,7 +114,7 @@ export const dictionary: Record<string, DictionaryEntry> = {
 		mainSlideSocial: "Социальные сети",
 		detect: "обнаружен",
 		unDetect: "не обнаружен",
-		go: "перейти",
+		from: "от",
 		update: "обновлено",
 	},
 };

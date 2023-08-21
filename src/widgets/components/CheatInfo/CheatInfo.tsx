@@ -23,7 +23,9 @@ interface Props {
 export const CheatInfo: FC<Props> = ({ id, lang }): JSX.Element => {
 	const router = useRouter();
 
-	const { isLoading, newData: data } = useCheatsQuery();
+	const { isLoading, newData: data } = useCheatsQuery(
+		lang === "ru" ? "RUB" : "USD"
+	);
 
 	const game: ICheats | undefined = !isLoading
 		? [...data].filter((f) => id.includes(f.name.toLowerCase()))[0]
@@ -99,7 +101,8 @@ export const CheatInfo: FC<Props> = ({ id, lang }): JSX.Element => {
 									radius="10px"
 									onClick={() => router.push("/download")}
 								>
-									{dictionary[lang].rotationBtn} {price.amount}P
+									{dictionary[lang].rotationBtn} {price.amount}
+									{lang === "ru" ? " ₽" : " $"}
 								</Button>
 							))}
 					</div>

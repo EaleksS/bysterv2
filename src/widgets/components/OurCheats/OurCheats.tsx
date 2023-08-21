@@ -11,8 +11,27 @@ interface Props {
 	lang: string;
 }
 
+const dataWow: ICheats[] = [
+	{
+		id: 1,
+		name: "WOW",
+		description: "WOW",
+		logo_img:
+			"https://hacks.byster.one/static/media/WoW_icon.c519264973473ed7558b.png",
+		bg_img: "/wow.jpg",
+		min_price: 0,
+		main_updated: "27.02.2023",
+		main_hack_status: 0,
+		main_status_time: "27.02.2023",
+		media: [],
+		products: [],
+	},
+];
+
 export const OurCheats: FC<Props> = ({ lang }): JSX.Element => {
-	const { isLoading, newData: data } = useCheatsQuery();
+	const { isLoading, newData: data } = useCheatsQuery(
+		lang === "ru" ? "RUB" : "USD"
+	);
 
 	return (
 		<div
@@ -20,6 +39,8 @@ export const OurCheats: FC<Props> = ({ lang }): JSX.Element => {
 			onClick={(e) => e.stopPropagation()}
 		>
 			<div className={styles.items}>
+				<Cheats lang={lang} {...dataWow[0]} />
+
 				{!isLoading ? (
 					data.length &&
 					data.map((e: ICheats) => <Cheats lang={lang} key={e.id} {...e} />)

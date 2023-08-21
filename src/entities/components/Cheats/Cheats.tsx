@@ -56,13 +56,22 @@ export const Cheats: FC<Props> = (props): JSX.Element => {
 				<Button
 					type="primary"
 					radius="10px"
-					onClick={() =>
+					onClick={() => {
+						if (props.name === "WOW")
+							return window.open("https://next-byster.vercel.app/", "_blank");
+
 						router.push(
 							`/games/${props.name.toLowerCase()}-v${props.products[0].id}`
-						)
-					}
+						);
+					}}
 				>
-					{dictionary[props.lang].go}
+					{props.name === "WOW"
+						? props.lang === "ru"
+							? "перейти"
+							: "go"
+						: `${dictionary[props.lang].from} ${props.min_price} ${
+								props.lang === "ru" ? "₽" : "$"
+						  }`}
 					<HiArrowNarrowRight className={styles.icon} />
 				</Button>
 			</div>

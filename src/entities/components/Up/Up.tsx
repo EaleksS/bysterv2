@@ -10,15 +10,14 @@ export const Up: FC = (): JSX.Element => {
 	const [active, setActive] = useState(false);
 
 	// Плавный переход
-	const [renderScroll] = useState<number>(0);
 	const sectionRef = useRef<HTMLDivElement>(null);
 	function scrollToMyElement() {
 		sectionRef.current?.scrollIntoView({ behavior: "smooth" });
 	}
 
 	useEffect(() => {
-		scrollToMyElement();
-	}, [renderScroll, handleClick]);
+		if (handleClick > 0) scrollToMyElement();
+	}, [handleClick]);
 	// /Плавный переход
 
 	const { height } = useWindowDimensions();

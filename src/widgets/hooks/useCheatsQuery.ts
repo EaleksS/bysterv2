@@ -2,10 +2,10 @@ import { getCheats } from "../services/cheats.service";
 import { ICheats } from "../interface/cheats.interface";
 import { useQuery } from "@tanstack/react-query";
 
-export const useCheatsQuery = () => {
+export const useCheatsQuery = (lang = "RUB") => {
 	const { data, isLoading } = useQuery({
-		queryKey: [`cheats`],
-		queryFn: () => getCheats.getCheatsList(),
+		queryKey: [`cheats`, lang],
+		queryFn: () => getCheats.getCheatsList(lang),
 		keepPreviousData: true,
 	});
 
