@@ -30,6 +30,16 @@ interface DictionaryEntry {
 	unDetect: string;
 	from: string;
 	update: string;
+	instruction: string;
+	loading: string;
+	loadingText: string;
+	loadingText2: string;
+	register: string;
+	registerText: string;
+	start: string;
+	startText: string;
+	settings: string;
+	settingsText: string;
 }
 
 export const dictionary: Record<string, DictionaryEntry> = {
@@ -74,6 +84,20 @@ export const dictionary: Record<string, DictionaryEntry> = {
 		unDetect: "undetected",
 		from: "from",
 		update: "update",
+		instruction: "Instruction",
+		loading: "Loading",
+		loadingText: "The purchase takes place within the launcher.",
+		loadingText2:
+			"Download and unpack Byster in any convenient location for you.",
+		register: "Registration",
+		registerText:
+			"The registration window will open in front of you. Come up with a login and password, and in the last step, specify where you learned about Byster.",
+		start: "Launch",
+		startText:
+			"To begin, you should launch Byster, then press the 'Download' button.",
+		settings: "Game Menu Configuration",
+		settingsText:
+			"After you have launched Byster in the game, make the necessary settings, namely, check the boxes next to the functions you need, and enjoy the game together with Byster. I will add screenshots later.",
 	},
 	ru: {
 		homeTitle: "АВТО PVE И PVP",
@@ -116,5 +140,18 @@ export const dictionary: Record<string, DictionaryEntry> = {
 		unDetect: "не обнаружен",
 		from: "от",
 		update: "обновлено",
+		instruction: "Инструкция",
+		loading: "Загрузка",
+		loadingText: "Покупка происходит внутри лаунчера.",
+		loadingText2: "Скачать и распаковать Byster в любом удобном для вас месте.",
+		register: "Регистрация",
+		registerText:
+			"Перед вами откроется окно регистрации. Придумайте логин и пароль и последним пунктом укажите откуда вы узнали о бустере.",
+		start: "Запуск",
+		startText:
+			"Для начала стоит запустить Byster, потом следует нажать кнопку 'Загрузить'",
+		settings: "Настройка игрового меню",
+		settingsText:
+			"После того как вы запустили Byster в игре, произведите настройки, а именно раставте нужные вам галочки напротив функций которые вам нужны и наслаждайтесь игрой вместе с Byster",
 	},
 };

@@ -3,8 +3,10 @@
 import Image from "next/image";
 import classes from "./Download.module.css";
 import Link from "next/link";
+import { dictionary } from "@/dictionaries/content";
+import { Locale } from "@/i18-config";
 
-const Download = () => {
+const Download = ({ params: { lang } }: { params: { lang: Locale } }) => {
 	return (
 		<div className="container">
 			<div className={classes.title}>
@@ -18,20 +20,20 @@ const Download = () => {
 					/>
 				</Link>
 				<a className={classes.link} href="./logo.png" download rel="noopener">
-					Скачать
+					{dictionary[lang].download}
 				</a>
 			</div>
 			<div className={classes.content}>
-				<h1>ИНСТРУКЦИЯ</h1>
+				<h1>{dictionary[lang].instruction}</h1>
 				<div className={classes.instruction}>
-					<h3>Загрузка</h3>
+					<h3>
+						{dictionary[lang].loading} <br />
+						<b style={{ fontSize: "20px" }}>{dictionary[lang].loadingText}</b>
+					</h3>
 					<div>
 						<h2>1</h2>
 
-						<p>
-							Покупка происходит внутри лаунчера. Скачать и распаковать Byster в
-							любом удобном для вас месте.
-						</p>
+						<p>{dictionary[lang].loadingText2}</p>
 						<Image
 							src="/first_image.png"
 							alt="first_image"
@@ -41,7 +43,7 @@ const Download = () => {
 					</div>
 				</div>
 				<div className={classes.instruction}>
-					<h3>Регистрация</h3>
+					<h3>{dictionary[lang].register}</h3>
 					<div>
 						<Image
 							src="/second_image.png"
@@ -49,21 +51,15 @@ const Download = () => {
 							width={340}
 							height={470}
 						/>
-						<p>
-							Перед вами откроется окно регистрации. Придумайте логин и пароль и
-							последним пунктом укажите откуда вы узнали о бустере.
-						</p>
+						<p>{dictionary[lang].registerText}</p>
 						<h2>2</h2>
 					</div>
 				</div>
 				<div className={classes.instruction}>
-					<h3>Запуск</h3>
+					<h3>{dictionary[lang].start}</h3>
 					<div>
 						<h2>3</h2>
-						<p>
-							Для начала стоит запустить Byster, потом следует нажать кнопку
-							Загрузить
-						</p>
+						<p>{dictionary[lang].startText}</p>
 						<Image
 							src="/third_image.png"
 							alt="first_image"
@@ -73,7 +69,7 @@ const Download = () => {
 					</div>
 				</div>
 				<div className={classes.instruction}>
-					<h3>Настройка игрового меню</h3>
+					<h3>{dictionary[lang].settings}</h3>
 					<div>
 						<Image
 							src="/fourth_image.png"
@@ -81,18 +77,14 @@ const Download = () => {
 							width={973}
 							height={580}
 						/>
-						<p>
-							После того как вы запустили Byster в игре, произведите настройки,
-							а именно раставте нужные вам галочки напротив функций которые вам
-							нужны и наслаждайтесь игрой вместе с Byster
-						</p>
+						<p>{dictionary[lang].settingsText}</p>
 						<h2>4</h2>
 					</div>
 				</div>
-				<div data-aos="fade-up" className={classes.instruction}>
+				{/* <div data-aos="fade-up" className={classes.instruction}>
 					<h3>Видеоинструкция</h3>
 					<div className={classes.iframe}>...</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
